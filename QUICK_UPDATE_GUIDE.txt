@@ -1,0 +1,35 @@
+================================================================================
+QUICK DATABASE UPDATE GUIDE - EXISTING DATABASE
+================================================================================
+
+STEP 1: Open phpMyAdmin
+   → Go to: http://localhost/phpmyadmin
+   → Make sure MySQL is running in XAMPP
+
+STEP 2: Select Database
+   → Click "dayflow_hrms" in left sidebar
+
+STEP 3: Open SQL Tab
+   → Click "SQL" tab at the top
+
+STEP 4: Copy SQL Code
+   → Open file: database/schema_update_email_verification.sql
+   → Copy ALL the code (Ctrl+A, Ctrl+C)
+
+STEP 5: Paste and Execute
+   → Paste into phpMyAdmin SQL text area (Ctrl+V)
+   → Click "Go" button
+   → Wait for success message
+
+STEP 6: Done!
+   → Your database is updated
+   → Test login at: http://localhost/dayflow/auth/login.php
+
+================================================================================
+IF YOU GET "Column already exists" ERROR:
+   → That's OK! Columns are already added
+   → Just run this to verify admin:
+   → UPDATE users SET email_verified = 1 WHERE email = 'admin@dayflow.com';
+
+================================================================================
+
